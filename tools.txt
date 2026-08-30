@@ -1,0 +1,232 @@
+
+
+╭──────────────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│                                                                              │
+│                         ▄▀▀ ▄▀█ █▀▀ ▀█▀ █▀▄▀█ █▀▀ █▀█                        │
+│                         █▀  █▀█ ▄▄█  █  █ ▀ █ █▄▄ █▀▀                        │
+│                                                                              │
+│                                                                              │
+│                                                                              │
+│                                FastMCP 3.4.7                                 │
+│                            https://gofastmcp.com                             │
+│                                                                              │
+│                  🖥  Server:      Alpaca MCP Server, 3.4.7                    │
+│                  🚀 Deploy free: https://horizon.prefect.io                  │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+
+[08/28/26 21:12:00] INFO     Starting MCP server 'Alpaca MCP    transport.py:241
+                             Server' with transport 'stdio'                     
+72 tools
+
+place_stock_order
+    Place a stock or ETF order.
+    args: ['symbol', 'side', 'qty', 'notional', 'type', 'time_in_force', 'limit_price', 'stop_price', 'trail_price', 'trail_percent', 'extended_hours', 'client_order_id', 'order_class', 'take_profit_limit_price', 'stop_loss_stop_price', 'stop_loss_limit_price', 'advanced_instructions']
+place_crypto_order
+    Place a cryptocurrency order.
+    args: ['symbol', 'side', 'qty', 'notional', 'type', 'time_in_force', 'limit_price', 'stop_price', 'client_order_id']
+place_option_order
+    Place an options order (single-leg or multi-leg).
+    args: ['qty', 'type', 'time_in_force', 'symbol', 'side', 'position_intent', 'limit_price', 'client_order_id', 'order_class', 'legs']
+get_stock_bars
+    Retrieve historical price bars (OHLCV) for one or more stocks.
+    args: ['symbols', 'timeframe', 'start', 'end', 'days', 'hours', 'minutes', 'limit', 'adjustment', 'feed', 'currency', 'sort', 'asof']
+get_stock_quotes
+    Retrieve historical bid/ask quotes (level 1) for one or more stocks.
+    args: ['symbols', 'start', 'end', 'days', 'hours', 'minutes', 'limit', 'feed', 'currency', 'sort', 'asof']
+get_stock_trades
+    Retrieve historical trade data for one or more stocks.
+    args: ['symbols', 'start', 'end', 'days', 'hours', 'minutes', 'limit', 'feed', 'currency', 'sort', 'asof']
+get_crypto_bars
+    Retrieve historical price bars (OHLCV) for one or more cryptocurrencie
+    args: ['symbols', 'timeframe', 'start', 'end', 'days', 'hours', 'minutes', 'limit', 'sort']
+get_crypto_quotes
+    Retrieve historical bid/ask quotes for one or more cryptocurrencies.
+    args: ['symbols', 'start', 'end', 'days', 'hours', 'minutes', 'limit', 'sort']
+get_crypto_trades
+    Retrieve historical trade data for one or more cryptocurrencies.
+    args: ['symbols', 'start', 'end', 'days', 'hours', 'minutes', 'limit', 'sort']
+search_alpaca_docs
+    Search Alpaca documentation pages and guides. Use for conceptual or pr
+    args: ['query']
+fetch_alpaca_doc
+    Fetch one Alpaca ReadMe documentation page by page ID. Use after searc
+    args: ['id']
+search_alpaca_api_specs
+    Search Alpaca API reference endpoints by topic, operation, path fragme
+    args: ['query']
+list_alpaca_api_endpoints
+    List endpoints for one allowed Alpaca OpenAPI spec. Use when browsing 
+    args: ['title']
+get_alpaca_endpoint_docs
+    Fetch reference docs for one exact Alpaca API endpoint by method and p
+    args: ['path', 'method', 'title']
+get_locates
+    Returns locate requests for the account, filtered by status, symbol, o
+    args: ['page_token', 'limit', 'status', 'symbol', 'start', 'end']
+create_locate
+    Creates a locate request for a short sale. Requires a symbol and quant
+    args: ['Idempotency-Key', 'all_or_none', 'limit_price', 'qty', 'symbol']
+get_locate
+    Returns a single locate request by its ID.
+    args: ['locate_id']
+get_locate_quotes
+    Returns locate availability and pricing for one or more symbols. Provi
+    args: ['symbols']
+get_account_info
+    Retrieves and formats the current account information including balanc
+get_account_activities
+    Returns a list of account activities such as fills, dividends, and tra
+    args: ['activity_types', 'category', 'order_id', 'date', 'until', 'after', 'direction', 'page_size', 'page_token']
+get_account_activities_by_type
+    Returns account activity entries for a specific type of activity.
+    args: ['order_id', 'date', 'until', 'after', 'direction', 'page_size', 'page_token', 'activity_type']
+get_account_config
+    Retrieves the current account configuration settings, including tradin
+update_account_config
+    Updates one or more account configuration settings. Only the fields yo
+    args: ['disable_overnight_trading', 'fractional_trading', 'max_margin_multiplier', 'max_options_trading_level', 'no_shorting', 'ptp_no_exception_entry', 'suspend_trade', 'trade_confirm_email']
+get_portfolio_history
+    Retrieves account portfolio history (equity and P/L) over a requested 
+    args: ['period', 'timeframe', 'intraday_reporting', 'start', 'pnl_reset', 'end', 'extended_hours', 'cashflow_types']
+get_all_assets
+    Get all available assets with optional filtering. WARNING: The unfilte
+    args: ['status', 'asset_class', 'exchange', 'attributes']
+get_asset
+    Retrieves and formats detailed information about a specific asset.
+    args: ['symbol_or_asset_id']
+get_calendar
+    Retrieves and formats market calendar for specified date range. WARNIN
+    args: ['start', 'end', 'date_type']
+get_clock
+    Retrieves and formats current market status and next open/close times.
+get_corporate_action_announcements
+    Retrieves corporate action announcements (dividends, mergers, splits, 
+    args: ['ca_types', 'since', 'until', 'symbol', 'cusip', 'date_type']
+get_corporate_action_announcement
+    Retrieves a single corporate action announcement by ID.
+    args: ['id']
+get_option_contracts
+    Retrieves option contracts for underlying symbol(s).
+    args: ['underlying_symbols', 'show_deliverables', 'status', 'expiration_date', 'expiration_date_gte', 'expiration_date_lte', 'root_symbol', 'type', 'style', 'strike_price_gte', 'strike_price_lte', 'page_token', 'limit', 'ppind']
+get_option_contract
+    Retrieves a single option contract by symbol or contract ID.
+    args: ['symbol_or_id']
+get_orders
+    Retrieves and formats orders with the specified filters.
+    args: ['status', 'limit', 'after', 'until', 'direction', 'nested', 'symbols', 'side', 'asset_class', 'before_order_id', 'after_order_id']
+cancel_all_orders
+    Cancel all open orders.
+get_order_by_id
+    Retrieves a single order by its ID.
+    args: ['nested', 'order_id']
+cancel_order_by_id
+    Cancel a specific order by its ID.
+    args: ['order_id']
+replace_order_by_id
+    Replaces an existing open order with updated parameters. At least one 
+    args: ['order_id', 'advanced_instructions', 'client_order_id', 'limit_price', 'notional', 'qty', 'stop_price', 'time_in_force', 'trail']
+get_order_by_client_id
+    Retrieves a single order specified by the client order ID. Note: if th
+    args: ['client_order_id']
+get_all_positions
+    Retrieves all current positions in the portfolio as JSON.
+close_all_positions
+    Closes all open positions by placing sell orders for each. If the mark
+    args: ['cancel_orders']
+get_open_position
+    Retrieves and formats details for a specific open position.
+    args: ['symbol_or_asset_id']
+close_position
+    Closes a specific position for a single symbol by placing a sell order
+    args: ['qty', 'percentage', 'symbol_or_asset_id']
+do_not_exercise_options_position
+    Submits a do-not-exercise instruction for a held option contract.
+    args: ['symbol_or_contract_id']
+exercise_options_position
+    Exercises a held option contract, converting it into the underlying as
+    args: ['symbol_or_contract_id']
+get_watchlists
+    Get all watchlists for the account.
+create_watchlist
+    Creates a new watchlist with specified symbols.
+    args: ['name', 'symbols']
+get_watchlist_by_id
+    Get a specific watchlist by its ID.
+    args: ['watchlist_id']
+update_watchlist_by_id
+    Update an existing watchlist. IMPORTANT: this replaces the entire watc
+    args: ['watchlist_id', 'name', 'symbols']
+add_asset_to_watchlist_by_id
+    Add an asset by symbol to a specific watchlist.
+    args: ['watchlist_id', 'symbol']
+delete_watchlist_by_id
+    Delete a specific watchlist by its ID.
+    args: ['watchlist_id']
+remove_asset_from_watchlist_by_id
+    Remove an asset by symbol from a specific watchlist.
+    args: ['watchlist_id', 'symbol']
+get_fixed_income_latest_quotes
+    Returns the latest quotes for fixed income securities (bonds, treasuri
+    args: ['isins', 'trade_size']
+get_news
+    Retrieves news articles for stocks and crypto. Filter by symbols, date
+    args: ['start', 'end', 'sort', 'symbols', 'limit', 'include_content', 'exclude_contentless', 'page_token']
+get_option_bars
+    Retrieves historical bar (OHLCV) data for one or more option contracts
+    args: ['symbols', 'timeframe', 'start', 'end', 'limit', 'page_token', 'sort']
+get_option_exchange_codes
+    Retrieves the mapping of exchange codes to exchange names for option m
+get_option_latest_quote
+    Retrieves and formats the latest quote for one or more option contract
+    args: ['symbols', 'feed']
+get_option_snapshot
+    Retrieves comprehensive snapshots of option contracts including latest
+    args: ['symbols', 'feed', 'updated_since', 'limit', 'page_token']
+get_option_chain
+    Retrieves option chain data for an underlying symbol, including latest
+    args: ['underlying_symbol', 'feed', 'limit', 'updated_since', 'page_token', 'type', 'strike_price_gte', 'strike_price_lte', 'expiration_date', 'expiration_date_gte', 'expiration_date_lte', 'root_symbol']
+get_option_trades
+    Retrieves historical trade data for one or more option contracts.
+    args: ['symbols', 'start', 'end', 'limit', 'page_token', 'sort']
+get_option_latest_trade
+    Retrieves the latest trade for one or more option contracts.
+    args: ['symbols', 'feed']
+get_market_movers
+    Returns the top market movers (gainers and losers) based on real-time 
+    args: ['market_type', 'top']
+get_most_active_stocks
+    Screens the market for most active stocks by volume or trade count.
+    args: ['by', 'top']
+get_crypto_latest_bar
+    Returns the latest minute bar for one or more crypto symbols. The loc 
+    args: ['loc', 'symbols']
+get_crypto_latest_orderbook
+    Returns the latest orderbook for one or more crypto symbols. The loc p
+    args: ['loc', 'symbols']
+get_crypto_latest_quote
+    Returns the latest quote for one or more crypto symbols. The loc param
+    args: ['loc', 'symbols']
+get_crypto_latest_trade
+    Returns the latest trade for one or more crypto symbols. The loc param
+    args: ['loc', 'symbols']
+get_crypto_snapshot
+    Returns a snapshot for one or more crypto symbols including latest tra
+    args: ['loc', 'symbols']
+get_corporate_actions
+    Retrieves and formats corporate action announcements.
+    args: ['symbols', 'cusips', 'types', 'region', 'start', 'end', 'ids', 'limit', 'data_quality', 'page_token', 'sort']
+get_stock_latest_bar
+    Get the latest minute bar for one or more stocks.
+    args: ['symbols', 'feed', 'currency']
+get_stock_latest_quote
+    Retrieves and formats the latest quote for one or more stocks.
+    args: ['symbols', 'feed', 'currency']
+get_stock_snapshot
+    Retrieves comprehensive snapshots of stock symbols including latest tr
+    args: ['symbols', 'feed', 'currency']
+get_stock_latest_trade
+    Get the latest trade for one or more stocks.
+    args: ['symbols', 'feed', 'currency']
